@@ -1,17 +1,16 @@
-import Slide1 from './slides/testSlide.mdx';
-import Slide2 from './slides/testSlide2.mdx';
+import { MDXProvider } from '@mdx-js/react';
+import Intro from './slides/intro.mdx';
+import Setup from './slides/setup.mdx';
+import DoneInJS from './slides/doneInJS.mdx';
 import { Deck } from './Deck';
 import { mdxComponents } from './MDXComponents';
 
 const App = () => (
-  <>
+  <MDXProvider components={mdxComponents}>
     <Deck
-      slides={[
-        <Slide1 components={mdxComponents} key="1" />,
-        <Slide2 components={mdxComponents} key="2" />,
-      ]}
+      slides={[<Intro key="1" />, <Setup key="2" />, <DoneInJS key="3" />]}
     />
-  </>
+  </MDXProvider>
 );
 
 export default App;

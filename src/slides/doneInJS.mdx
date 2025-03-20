@@ -1,0 +1,32 @@
+import { Column, Row } from '../Column';
+import ClickReveal from '../ClickReveal';
+import Puzzle from '../Puzzle';
+
+# Fail #1 in JS
+
+<Row>
+<Column>
+```tsx
+
+
+const [successCoords, setSuccess] = useState<SuccessCoords | null>(null);
+
+const PuzzleContainer = styled.div<Partial<SuccessCoords>>`
+  ${({ x }) => `--success-start-x: ${x};`}
+  ${({ y }) => `--success-start-y: ${y};`}
+`;
+
+// further down somewhere
+return (<PuzzleContainer {...successCoords}>{...cells}</PuzzleContainer>)
+```
+</Column>
+<Column>
+<ClickReveal points={
+  [
+    "something hot",
+    "something heavy",
+    "something sharp"
+  ]
+} />
+</Column>
+</Row>

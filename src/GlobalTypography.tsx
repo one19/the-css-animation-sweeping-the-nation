@@ -25,6 +25,11 @@ const GlobalTypography = () => {
           -moz-osx-font-smoothing: grayscale;
         }
 
+        ul {
+          list-style: none;
+          padding: 0;
+        }
+
         h1,
         h2,
         h3,
