@@ -6,13 +6,16 @@ const GlobalTypography = () => {
   return (
     <Global
       styles={css`
+        html,
         body,
         #root {
           display: flex;
           place-items: center;
           min-width: 320px;
           min-height: 100vh;
-          width: 100%;
+          width: 100vw;
+          max-width: 100%;
+          overflow-x: hidden;
           font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
           font-weight: 400;
 
@@ -49,6 +52,7 @@ const GlobalTypography = () => {
         h1 {
           font-size: 3.2em;
           line-height: 1.1;
+          z-index: 1;
         }
 
         a {

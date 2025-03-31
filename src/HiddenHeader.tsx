@@ -6,8 +6,8 @@ const HeaderContainer = styled.div<{ isPeeking: boolean }>`
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
   transition: transform 0.3s;
-  background-color: #f8f9fa;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
