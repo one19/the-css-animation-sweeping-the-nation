@@ -1,0 +1,29 @@
+import { Column, Row } from '../Column';
+import ClickReveal from '../ClickReveal';
+
+# The CSS Animation Solution
+
+<Row>
+<Column>
+
+Pure CSS solution using CSS variables:
+
+```css
+animation-delay: calc(
+  (
+    /* calculate distance from final cell to THIS cell */
+    max(abs(--x - --success-start-x)) +
+    max(abs(--y - --success-start-y))
+  ) * 0.2s
+);
+```
+</Column>
+<Column>
+
+<ClickReveal points={[
+  'Pure CSS, no JS logic needed',
+  'Single animation definition in the parent',
+  'Stateless, no hanging timeouts',
+]} />
+</Column>
+</Row>

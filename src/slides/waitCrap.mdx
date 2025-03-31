@@ -1,0 +1,29 @@
+import { Column, Row } from '../Column';
+import ClickReveal from '../ClickReveal';
+
+# Encapsulation & Modularity
+
+<Row>
+<Column>
+## Pros
+Benefits of encapsulating `goop` animation logic within CSS variables:
+
+```tsx
+const PuzzleContainer = styled.div`
+  --success-start-x: ${x};
+  --success-start-y: ${y};
+`;
+```
+
+<ClickReveal points={[
+  "Reusable across components without prop passing",
+  "Maintain single source of truth where state happens",
+  "Easy to modify",
+]} />
+</Column>
+<Column>
+### Cons
+
+<ClickReveal points={["IT DOESN'T FREAKING WORK"]} />
+</Column>
+</Row>

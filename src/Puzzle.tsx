@@ -23,8 +23,6 @@ export const Wrapper = styled.div<Partial<CellProps>>`
   width: 250px;
   border-top: 1px solid black;
   border-left: 1px solid black;
-  ${({ x }) => x && `--success-start-x: ${x};`}
-  ${({ y }) => y && `--success-start-y: ${y};`}
 `;
 
 const setSuccess = (successProps: CellProps | null) => {

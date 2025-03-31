@@ -2,31 +2,29 @@ import { Column, Row } from '../Column';
 import ClickReveal from '../ClickReveal';
 import Puzzle from '../Puzzle';
 
-# Fail #1 in JS
+# Typical JS Approach
 
 <Row>
 <Column>
+
+Common JS method involves nested maps, setTimeout and state management:
+
 ```tsx
-
-
-const [successCoords, setSuccess] = useState<SuccessCoords | null>(null);
-
-const PuzzleContainer = styled.div<Partial<SuccessCoords>>`
-  ${({ x }) => `--success-start-x: ${x};`}
-  ${({ y }) => `--success-start-y: ${y};`}
-`;
-
-// further down somewhere
-return (<PuzzleContainer {...successCoords}>{...cells}</PuzzleContainer>)
+cells.map((row, y) =>
+  row.map((cell, x) => {
+    setTimeout(() => animateCell(x, y), (Math.abs(x - sx) + Math.abs(y - sy)) * 200);
+  })
+);
 ```
 </Column>
 <Column>
-<ClickReveal points={
-  [
-    "something hot",
-    "something heavy",
-    "something sharp"
-  ]
-} />
+<ClickReveal>
+- waaaaait what's that `animateCell` function?
+- Would this be done in a useEffect? What happens when we reset?
+- Does that mean all the children will rerender?
+- Oh no, those props will have to go all the way down!
+- Ohnnononono
+- Oh dear
+</ClickReveal>
 </Column>
 </Row>

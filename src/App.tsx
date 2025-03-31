@@ -2,13 +2,21 @@ import { MDXProvider } from '@mdx-js/react';
 import Intro from './slides/intro.mdx';
 import Setup from './slides/setup.mdx';
 import DoneInJS from './slides/doneInJS.mdx';
+import CSSIdea from './slides/theCSSIdea.mdx';
+import WaitCrap from './slides/waitCrap.mdx';
 import { Deck } from './Deck';
 import { mdxComponents } from './MDXComponents';
 
 const App = () => (
   <MDXProvider components={mdxComponents}>
     <Deck
-      slides={[<Intro key="1" />, <Setup key="2" />, <DoneInJS key="3" />]}
+      slides={[
+        <Intro key="1" />,
+        <Setup key="2" />,
+        <DoneInJS key="3" />,
+        <CSSIdea key="4" />,
+        <WaitCrap key="5" />,
+      ]}
     />
   </MDXProvider>
 );
