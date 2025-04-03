@@ -33,6 +33,10 @@ const GlobalTypography = () => {
           padding: 0;
         }
 
+        li {
+          margin: 1em 0;
+        }
+
         h1,
         h2,
         h3,
@@ -62,6 +66,10 @@ const GlobalTypography = () => {
         }
         a:hover {
           color: ${theme.colors.linkHover};
+        }
+
+        * {
+          z-index: 1;
         }
       `}
     />

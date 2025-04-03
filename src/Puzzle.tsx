@@ -72,7 +72,7 @@ const Cell = styled.div<CellProps>`
   }
 
   &::after {
-    content: '${({ x, y }) => `(${x}, ${y})`}';
+    content: '${({ x, y }) => (x === 1 ? y : y === 1 ? x : '')}';
     position: absolute;
     top: 0;
     left: 0;
