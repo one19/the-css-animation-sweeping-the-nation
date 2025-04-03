@@ -2,17 +2,17 @@ import { Column, Row } from '../Column';
 import ClickReveal from '../ClickReveal';
 import Puzzle from '../Puzzle';
 
-# Typical JS Approach
+# Standard JS Approach
 
 <Row>
 <Column>
 
-Common JS method involves nested maps, setTimeout and state management:
+JS method involves nested maps, setTimeout and state management:
 
 ```tsx
 cells.map((row, y) =>
   row.map((cell, x) => {
-    setTimeout(() => animateCell(x, y), (Math.abs(x - sx) + Math.abs(y - sy)) * 200);
+    setTimeout(() => animateCell(x, y), (Math.abs(x - sx) + Math.abs(y - sy)) * DELAY_IN_MS);
   })
 );
 ```
@@ -20,11 +20,11 @@ cells.map((row, y) =>
 <Column>
 <ClickReveal>
 - waaaaait what's that `animateCell` function?
-- Would this be done in a useEffect? What happens when we reset?
-- Does that mean all the children will rerender?
-- Oh no, those props will have to go all the way down!
-- Ohnnononono
-- Oh dear
+- so we're setting dom properties on the children yeah?
+- what happens if they rerender?
+- what happens if they unmount?
+- what happens if we unmount?
+- ## OH NO TESTING THIS IS GOING TO SUCK
 </ClickReveal>
 </Column>
 </Row>

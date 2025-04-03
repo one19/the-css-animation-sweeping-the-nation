@@ -1,0 +1,27 @@
+import { Column, Row } from '../Column';
+import ClickReveal from '../ClickReveal';
+
+# Fix #2
+
+Dumbing it down for browsers that need a hand _(LOOKING AT YOU SAFARI)_
+
+## 2: use really wordy version of abs()
+```css
+  animation-delay: calc(
+    (
+        max(
+            var(--x) - var(--success-start-x),
+            var(--success-start-x) - var(--x)
+          ) +
+          max(
+            var(--y) - var(--success-start-y),
+            var(--success-start-y) - var(--y)
+          )
+      ) *
+      0.2s
+  );
+```
+
+$$
+\max\{x-xSuccess, xSuccess-x\} \\= |x - xSuccess|
+$$

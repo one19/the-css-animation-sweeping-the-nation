@@ -1,0 +1,35 @@
+import { Column, Row } from '../Column';
+import QRCode from '../QRCode'
+
+# Thank you!
+
+Please hit me up with any questions, comments, or anything on your mind really!
+
+Drew
+
+<Row>
+<Column>
+```tsx
+/* maybe one day the code will look like this */
+export const Wrapper = styled.div`
+  --success-start-x: ${({ x }) => x};
+  --success-start-y: ${({ y }) => y};
+`;
+
+const Cell = styled.div`
+  #puzzle[data-success-x][data-success-y] & {
+    animation: ${successWave} 1s linear forwards;
+    animation-delay: calc(
+      (
+        max(abs(attr(data-x) - --success-start-x)) +
+        max(abs(attr(data-y) - --success-start-y))
+      ) * 0.2s
+    );
+`;
+```
+</Column>
+  <Column>
+    Presentation can be found here!
+    <QRCode url="https://github.com/one19/the-css-animation-sweeping-the-nation" />
+  </Column>
+</Row>

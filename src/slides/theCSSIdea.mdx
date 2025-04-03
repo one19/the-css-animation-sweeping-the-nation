@@ -9,21 +9,32 @@ import ClickReveal from '../ClickReveal';
 Pure CSS solution using CSS variables:
 
 ```css
-animation-delay: calc(
-  (
-    /* calculate distance from final cell to THIS cell */
-    max(abs(--x - --success-start-x)) +
-    max(abs(--y - --success-start-y))
-  ) * 0.2s
-);
+/* if the success vars are set, run the animation! */
+#puzzle[style*='--success-start-x'][style*='--success-start-y'] & {
+
+  /* very simple 1 keyframe animation */
+  animation: ${successWave} 1s linear forwards;
+
+  /* delay * distance */
+  animation-delay: calc(
+    (
+      /* manhattan distance */
+      max(abs(attr(data-x) - --success-start-x)) +
+      max(abs(attr(data-y) - --success-start-y))
+    ) * 0.2s
+  );
+}
 ```
 </Column>
 
 <Column>
 <ClickReveal>
 - Pure CSS, no JS logic needed
-- Single animation definition in the parent
+- Single animation trigger on the parent
+- Very simple animation on child
 - Stateless, no hanging timeouts
+- Easy to test, if the property exists, the rest is on the browser
+- ## TOTALLY NONFUNCTIONAL
 </ClickReveal>
 </Column>
 </Row>

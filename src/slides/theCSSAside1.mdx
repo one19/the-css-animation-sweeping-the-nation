@@ -1,0 +1,18 @@
+import { Column, Row } from '../Column';
+import ClickReveal from '../ClickReveal';
+
+# Fix #1
+
+Dumbing it down for browsers that need a hand _(practically all of them)_
+
+## 1: remove attrs for css vars (props don't work very well)
+```css
+animation-delay: calc(
+  (
+    /* calculate distance from final cell to THIS cell */
+    max(abs(--x - --success-start-x)) +
+    max(abs(--y - --success-start-y))
+  ) * 0.2s
+);
+```
+

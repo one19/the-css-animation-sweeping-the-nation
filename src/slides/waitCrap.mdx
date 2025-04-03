@@ -6,7 +6,9 @@ import ClickReveal from '../ClickReveal';
 <Row>
 <Column>
 ## Pros
-Benefits of encapsulating `goop` animation logic within CSS variables:
+Benefits of encapsulating animation logic within CSS variables:
+
+triggering the animation is as easy as prop passing!
 
 ```tsx
 const PuzzleContainer = styled.div`
@@ -14,18 +16,13 @@ const PuzzleContainer = styled.div`
   --success-start-y: ${y};
 `;
 ```
-
-<ClickReveal points={[
-  "Reusable across components without prop passing",
-  "Maintain single source of truth where state happens",
-  "Easy to modify",
-]} />
+_thankfully, undefined values are ignored by the browser_
 </Column>
 <Column>
 ### Cons
 
 <ClickReveal>
-## IT DOESN'T FREAKING WORK
+## IT ALSO DOESN'T FREAKING WORK
 </ClickReveal>
 </Column>
 </Row>

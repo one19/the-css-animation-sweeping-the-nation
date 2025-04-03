@@ -1,0 +1,29 @@
+# Compromise(d)
+
+```jsx
+const setSuccess = (successProps: CellProps | null) => {
+  const puzzleElement = document.getElementById('puzzle');
+  puzzleElement.style.setProperty('--success-start-x', `${x}`);
+  puzzleElement.style.setProperty('--success-start-y', `${y}`);
+};
+
+const Cell = styled.div`
+  --x: ${({ x }) => x};
+  --y: ${({ y }) => y};
+
+  #puzzle[style*='--success-start-x'][style*='--success-start-y'] & {
+    animation: ${successWave} 1s linear forwards;
+    animation-delay: calc(
+      (
+        max(
+          var(--x) - var(--success-start-x),
+          var(--success-start-x) - var(--x)
+        ) +
+        max(
+          var(--y) - var(--success-start-y),
+          var(--success-start-y) - var(--y)
+        )
+      ) * 0.2s
+    );
+  }`;
+```

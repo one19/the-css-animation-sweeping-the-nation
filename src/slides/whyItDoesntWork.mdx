@@ -1,0 +1,19 @@
+# The mystery of the missing parents
+
+### Expected Generation:
+```css
+#puzzle[style*='--super-cool-variable'] & {
+  /* awesome css */
+}
+```
+
+### Actual Generation:
+```css
+/* var 1 passed in */
+.PuzzleContainer__googlecrantz { --super-cool-variable: 1; }
+/* var 2 passed in */
+.PuzzleContainer__guildenscham { --super-cool-variable: 2; }
+```
+
+### Impact:
+Nothing selects. It's runtime classes that don't map back to the inline.

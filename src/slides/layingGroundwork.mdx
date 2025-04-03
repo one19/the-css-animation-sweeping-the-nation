@@ -1,0 +1,37 @@
+import { Column, Row } from '../Column'
+import Margin from '../Margin'
+import manhattanImageUrl from '/src/assets/manhattan_distance.svg'
+
+# Diamond Delay Math
+
+<Row>
+  <Column>
+    Delay = Manhattan distance × 200ms
+
+    $$ d = |x - s_x| + |y - s_y| $$
+
+    Cells with equal *d* animate together, forming a diamond.
+
+
+    (s<sub>x</sub>, s<sub>y</sub>)
+    <span style={{ margin: '0 0.5rem' }}>→</span>
+    (x, s<sub>y</sub>)
+    <Margin mt="0.5em" />
+    (s<sub>x</sub>, s<sub>y</sub>)
+    <span style={{ margin: '0 0.5rem' }}>↓</span>
+    (s<sub>x</sub>, y)
+
+    [Wikipedia - Manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry)
+  </Column>
+  <Column>
+    <img src={manhattanImageUrl} alt="manhattan distance picture" />
+  </Column>
+</Row>
+
+## Circle Radius Equation for comparison
+
+$$ r = \sqrt{(x - c_x)^2 + (y - c_y)^2} $$
+
+(c<sub>x</sub>, c<sub>y</sub>)
+<span style={{ margin: '0 0.5rem' }}>→</span>
+(x, y)
