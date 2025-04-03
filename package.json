@@ -18,6 +18,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-syntax-highlighter": "^15.6.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "ts-deepmerge": "^7.0.2"
   },
   "devDependencies": {
